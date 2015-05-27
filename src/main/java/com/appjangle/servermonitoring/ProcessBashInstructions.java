@@ -8,6 +8,7 @@ import io.nextweb.Node;
 import io.nextweb.NodeList;
 import io.nextweb.Query;
 import io.nextweb.Session;
+import io.nextweb.engine.fn.IntegerResult;
 import java.util.List;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 
@@ -44,7 +45,9 @@ public class ProcessBashInstructions {
         Link _result = t.result();
         Query _select_1 = bashInstruction.select(_result);
         Query _setValueSafe = _select_1.setValueSafe(res);
-        _setValueSafe.get();
+        Node _get_1 = _setValueSafe.get();
+        IntegerResult _clearVersions = _get_1.clearVersions(2);
+        _clearVersions.get();
       }
     }
   }

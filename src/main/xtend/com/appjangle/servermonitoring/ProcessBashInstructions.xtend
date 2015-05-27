@@ -24,7 +24,7 @@ class ProcessBashInstructions {
 				println(res)
     		}
     		
-    		bashInstruction.select(t.result).setValueSafe(res).get()
+    		bashInstruction.select(t.result).setValueSafe(res).get.clearVersions(2).get
     	}
     	
     }
