@@ -8,5 +8,7 @@ public class ServerMonitoring {
     if (_notEquals) {
       throw new RuntimeException("Supply two arguments: Node and Secret");
     }
+    final String uri = args[0];
+    final String secret = args[1];
   }
 }

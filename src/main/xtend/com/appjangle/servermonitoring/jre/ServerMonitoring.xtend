@@ -7,6 +7,9 @@ class ServerMonitoring {
 			throw new RuntimeException("Supply two arguments: Node and Secret")
 		}
 		
+		val uri = args.get(0)
+		val secret = args.get(1)
+		
 		
 	}
 	
