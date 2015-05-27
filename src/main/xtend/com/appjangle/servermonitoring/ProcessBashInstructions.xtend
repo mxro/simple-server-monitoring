@@ -1,7 +1,7 @@
 package com.appjangle.servermonitoring
 
-import io.nextweb.Node
 import com.appjangle.servermonitoring.types.ServerMonitoringTypes
+import io.nextweb.Node
 
 class ProcessBashInstructions {
 	  
@@ -11,7 +11,8 @@ class ProcessBashInstructions {
     	var t = new ServerMonitoringTypes(node.session())
     	val bashInstructions = node.selectAll(t.bashInstruction).get();
     	
-    	for (bashInstruction : bashInstructions) {
+    	for (bashInstruction : bashInstructions.nodes) {
+    		val String script = (String) bashInstruction.value()
     		
     	}
     	

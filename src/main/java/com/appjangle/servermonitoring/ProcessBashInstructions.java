@@ -1,24 +1,15 @@
 package com.appjangle.servermonitoring;
 
-import com.appjangle.servermonitoring.types.ServerMonitoringTypes;
-import io.nextweb.Link;
-import io.nextweb.ListQuery;
 import io.nextweb.Node;
-import io.nextweb.NodeList;
-import io.nextweb.Session;
 
 @SuppressWarnings("all")
 public class ProcessBashInstructions {
   private Node node;
   
   public void now() {
-    Session _session = this.node.session();
-    ServerMonitoringTypes t = new ServerMonitoringTypes(_session);
-    Link _bashInstruction = t.bashInstruction();
-    ListQuery _selectAll = this.node.selectAll(_bashInstruction);
-    final NodeList bashInstructions = _selectAll.get();
-    for (final Node bashInstruction : bashInstructions) {
-    }
+    throw new Error("Unresolved compilation problems:"
+      + "\nType mismatch: cannot convert from Class<String> to String"
+      + "\nUse \'as\' keyword for type casting.");
   }
   
   public ProcessBashInstructions(final Node node) {
