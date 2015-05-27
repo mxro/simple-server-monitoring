@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<groupId>com.appjangle.servermonitoring</groupId>
 	<artifactId>SimpleServerMonitoring</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<description>A simple tool for Server/System Monitoring Implemented with Xtend and Appjangle.
 	</description>
 	<url>https://github.com/mxro/simple-server-monitoring</url>
