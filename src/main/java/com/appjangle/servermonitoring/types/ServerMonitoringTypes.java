@@ -22,4 +22,8 @@ public class ServerMonitoringTypes {
   public Link result() {
     return this.session.link("https://ajadmin.nxweb.de/admin1/admin1/.n/Monitoring_and_Logging/.n/Types/.n/Result");
   }
+  
+  public ServerMonitoringTypes(final Session session) {
+    this.session = session;
+  }
 }
