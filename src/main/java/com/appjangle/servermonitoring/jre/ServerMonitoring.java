@@ -1,5 +1,15 @@
 package com.appjangle.servermonitoring.jre;
 
+import com.appjangle.servermonitoring.ProcessBashInstructions;
+import com.appjangle.servermonitoring.types.ServerMonitoringTypes;
+import io.nextweb.Link;
+import io.nextweb.ListQuery;
+import io.nextweb.Node;
+import io.nextweb.NodeList;
+import io.nextweb.Session;
+import io.nextweb.jre.Nextweb;
+import java.util.List;
+
 @SuppressWarnings("all")
 public class ServerMonitoring {
   public static void main(final String[] args) {
@@ -10,5 +20,17 @@ public class ServerMonitoring {
     }
     final String uri = args[0];
     final String secret = args[1];
+    final Session session = Nextweb.createSession();
+    final ServerMonitoringTypes t = new ServerMonitoringTypes(session);
+    Link _link = session.link(uri, secret);
+    final Node root = _link.get();
+    Link _instructionGroup = t.instructionGroup();
+    ListQuery _selectAll = root.selectAll(_instructionGroup);
+    final NodeList groups = _selectAll.get();
+    List<Node> _nodes = groups.nodes();
+    for (final Node group : _nodes) {
+      ProcessBashInstructions _processBashInstructions = new ProcessBashInstructions(group);
+      _processBashInstructions.now();
+    }
   }
 }
