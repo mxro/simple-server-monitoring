@@ -2,12 +2,14 @@ package com.appjangle.servermonitoring.jre;
 
 import com.appjangle.servermonitoring.ProcessBashInstructions;
 import com.appjangle.servermonitoring.types.ServerMonitoringTypes;
+import de.mxro.fn.Success;
 import io.nextweb.Link;
 import io.nextweb.ListQuery;
 import io.nextweb.Node;
 import io.nextweb.NodeList;
 import io.nextweb.Session;
 import io.nextweb.jre.Nextweb;
+import io.nextweb.promise.NextwebPromise;
 import java.util.List;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 
@@ -41,5 +43,7 @@ public class ServerMonitoring {
         _processBashInstructions.now();
       }
     }
+    NextwebPromise<Success> _close = session.close();
+    _close.get();
   }
 }

@@ -6,7 +6,7 @@ import com.appjangle.servermonitoring.ProcessBashInstructions
 
 class ServerMonitoring {
 	
-	def static main(String[] args) {
+	def static void main(String[] args) {
 		if (args.length != 2) {
 			throw new RuntimeException("Supply two arguments: Node and Secret")
 		}
@@ -30,6 +30,8 @@ class ServerMonitoring {
 			new ProcessBashInstructions(group).now
 			
 		}
+		
+		session.close.get
 		
 	}
 	
