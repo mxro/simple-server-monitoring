@@ -17,13 +17,14 @@ class ProcessBashInstructions {
     		
     		val lines = script.split("\n")
  
+ 			var res = ""
     		for (line : lines) {
     			println("Run: "+line)
-    			var res = Spawn.sh(line);
-    			
-    			bashInstruction.select(t.result).setValueSafe(res).get()
-    			
+    			res += Spawn.sh(line)+"\n";
+				println(res)
     		}
+    		
+    		bashInstruction.select(t.result).setValueSafe(res).get()
     	}
     	
     }

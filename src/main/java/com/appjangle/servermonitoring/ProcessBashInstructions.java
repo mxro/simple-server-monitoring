@@ -30,16 +30,21 @@ public class ProcessBashInstructions {
         Object _value = _get.value();
         final String script = ((String) _value);
         final String[] lines = script.split("\n");
+        String res = "";
         for (final String line : lines) {
           {
             InputOutput.<String>println(("Run: " + line));
-            String res = Spawn.sh(line);
-            Link _result = t.result();
-            Query _select_1 = bashInstruction.select(_result);
-            Query _setValueSafe = _select_1.setValueSafe(res);
-            _setValueSafe.get();
+            String _res = res;
+            String _sh = Spawn.sh(line);
+            String _plus = (_sh + "\n");
+            res = (_res + _plus);
+            InputOutput.<String>println(res);
           }
         }
+        Link _result = t.result();
+        Query _select_1 = bashInstruction.select(_result);
+        Query _setValueSafe = _select_1.setValueSafe(res);
+        _setValueSafe.get();
       }
     }
   }
