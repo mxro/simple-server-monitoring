@@ -20,6 +20,7 @@ class ServerMonitoring {
 		
 		val root = session.link(uri, secret).get
 		
+		println("Loaded instructions: "+root.uri())
 		
 		val groups = root.selectAll(t.instructionGroup).get
 		

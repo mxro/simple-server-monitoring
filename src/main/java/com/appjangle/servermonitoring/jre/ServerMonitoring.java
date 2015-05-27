@@ -9,6 +9,7 @@ import io.nextweb.NodeList;
 import io.nextweb.Session;
 import io.nextweb.jre.Nextweb;
 import java.util.List;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 
 @SuppressWarnings("all")
 public class ServerMonitoring {
@@ -24,6 +25,9 @@ public class ServerMonitoring {
     final ServerMonitoringTypes t = new ServerMonitoringTypes(session);
     Link _link = session.link(uri, secret);
     final Node root = _link.get();
+    String _uri = root.uri();
+    String _plus = ("Loaded instructions: " + _uri);
+    InputOutput.<String>println(_plus);
     Link _instructionGroup = t.instructionGroup();
     ListQuery _selectAll = root.selectAll(_instructionGroup);
     final NodeList groups = _selectAll.get();
