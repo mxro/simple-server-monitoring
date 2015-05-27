@@ -33,8 +33,13 @@ public class ServerMonitoring {
     final NodeList groups = _selectAll.get();
     List<Node> _nodes = groups.nodes();
     for (final Node group : _nodes) {
-      ProcessBashInstructions _processBashInstructions = new ProcessBashInstructions(group);
-      _processBashInstructions.now();
+      {
+        String _uri_1 = group.uri();
+        String _plus_1 = ("Processing group: " + _uri_1);
+        InputOutput.<String>println(_plus_1);
+        ProcessBashInstructions _processBashInstructions = new ProcessBashInstructions(group);
+        _processBashInstructions.now();
+      }
     }
   }
 }

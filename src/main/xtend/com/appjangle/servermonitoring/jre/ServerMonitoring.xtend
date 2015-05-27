@@ -26,6 +26,7 @@ class ServerMonitoring {
 		
 		for (group: groups.nodes) {
 			
+			println("Processing group: "+group.uri())
 			new ProcessBashInstructions(group).now
 			
 		}
