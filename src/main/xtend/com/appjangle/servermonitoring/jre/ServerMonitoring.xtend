@@ -1,8 +1,8 @@
 package com.appjangle.servermonitoring.jre
 
-import io.nextweb.jre.Nextweb
+import com.appjangle.servermonitoring.jre.instructions.ProcessBashInstructions
 import com.appjangle.servermonitoring.types.ServerMonitoringTypes
-import com.appjangle.servermonitoring.ProcessBashInstructions
+import io.nextweb.jre.Nextweb
 
 class ServerMonitoring {
 	
