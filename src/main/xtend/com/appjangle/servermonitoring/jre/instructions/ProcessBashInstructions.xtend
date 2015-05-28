@@ -1,4 +1,4 @@
-package com.appjangle.servermonitoring
+package com.appjangle.servermonitoring.jre.instructions
 
 import com.appjangle.servermonitoring.types.ServerMonitoringTypes
 import de.mxro.process.Spawn
