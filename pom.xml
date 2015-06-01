@@ -6,7 +6,6 @@
 	<description>A simple tool for Server/System Monitoring Implemented with Xtend and Appjangle.
 	</description>
 	<url>https://github.com/mxro/simple-server-monitoring</url>
-
 	<properties>
 		<module.gwtVersion>2.5.1</module.gwtVersion>
 		<module.draftCompile>true</module.draftCompile>
