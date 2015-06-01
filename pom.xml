@@ -16,8 +16,7 @@
 			*
 		</module.importedPackages>
 		<module.exportedPackages>
-			!com.appjangle.filesync.internal*,
-			com.appjangle.filesync*
+		
 		</module.exportedPackages>
 		<module.serviceDefinitions>
 		</module.serviceDefinitions>
