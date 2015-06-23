@@ -16,6 +16,7 @@ class ServerMonitoring {
 		new Timer().schedule(new TimerTask() {
 			
 			override run() {
+				println("Operations not completed within timeout.")
 				System.exit(0)
 			}
 			

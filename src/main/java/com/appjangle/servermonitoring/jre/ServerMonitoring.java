@@ -26,6 +26,7 @@ public class ServerMonitoring {
     Timer _timer = new Timer();
     _timer.schedule(new TimerTask() {
       public void run() {
+        InputOutput.<String>println("Operations not completed within timeout.");
         System.exit(0);
       }
     }, ((1000 * 60) * 3));
