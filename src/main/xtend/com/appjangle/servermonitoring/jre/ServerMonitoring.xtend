@@ -43,8 +43,9 @@ class ServerMonitoring {
 			new ProcessBashInstructions(group).now
 			
 		}
-		
+		println('closing')
 		session.close.get
+		println('closed')
 		
 	}
 	

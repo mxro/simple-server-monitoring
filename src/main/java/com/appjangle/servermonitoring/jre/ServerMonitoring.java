@@ -52,7 +52,9 @@ public class ServerMonitoring {
         _processBashInstructions.now();
       }
     }
+    InputOutput.<String>println("closing");
     NextwebPromise<Success> _close = session.close();
     _close.get();
+    InputOutput.<String>println("closed");
   }
 }
