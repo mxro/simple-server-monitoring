@@ -12,12 +12,14 @@ class ProcessBashInstructions {
 		var t = new ServerMonitoringTypes(node.session())
 		val bashInstructions = node.selectAll(t.bashInstruction).get();
 
+
 		for (bashInstruction : bashInstructions.nodes) {
 			val String script = bashInstruction.select(t.bashScript).get().value() as String
-
+println('process '+script)
 			val res = Spawn.sh(script);
-
+println('done '+script)
 			bashInstruction.select(t.result).setValueSafe(res).get.clearVersions(2).get
+			println('written '+script)
 		}
 
 	}
