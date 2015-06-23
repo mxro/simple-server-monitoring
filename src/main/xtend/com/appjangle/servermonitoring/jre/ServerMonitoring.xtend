@@ -13,7 +13,8 @@ class ServerMonitoring {
 			throw new RuntimeException("Supply two arguments: Node and Secret")
 		}
 		
-		new Timer().schedule(new TimerTask() {
+		val timer = new Timer()
+		timer.schedule(new TimerTask() {
 			
 			override run() {
 				println("Operations not completed within timeout.")
@@ -45,6 +46,8 @@ class ServerMonitoring {
 		}
 		println('closing')
 		session.close.get
+		
+		timer.cancel
 		println('closed')
 		
 	}

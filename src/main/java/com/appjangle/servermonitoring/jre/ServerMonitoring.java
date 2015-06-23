@@ -23,8 +23,8 @@ public class ServerMonitoring {
     if (_notEquals) {
       throw new RuntimeException("Supply two arguments: Node and Secret");
     }
-    Timer _timer = new Timer();
-    _timer.schedule(new TimerTask() {
+    final Timer timer = new Timer();
+    timer.schedule(new TimerTask() {
       public void run() {
         InputOutput.<String>println("Operations not completed within timeout.");
         System.exit(0);
@@ -55,6 +55,7 @@ public class ServerMonitoring {
     InputOutput.<String>println("closing");
     NextwebPromise<Success> _close = session.close();
     _close.get();
+    timer.cancel();
     InputOutput.<String>println("closed");
   }
 }
