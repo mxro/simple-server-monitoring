@@ -10,7 +10,6 @@ import io.nextweb.Query;
 import io.nextweb.Session;
 import io.nextweb.engine.fn.IntegerResult;
 import java.util.List;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 
 @SuppressWarnings("all")
 public class ProcessBashInstructions {
@@ -30,16 +29,13 @@ public class ProcessBashInstructions {
         Node _get = _select.get();
         Object _value = _get.value();
         final String script = ((String) _value);
-        InputOutput.<String>println(("process " + script));
         final String res = Spawn.sh(script);
-        InputOutput.<String>println(("done " + script));
         Link _result = t.result();
         Query _select_1 = bashInstruction.select(_result);
         Query _setValueSafe = _select_1.setValueSafe(res);
         Node _get_1 = _setValueSafe.get();
         IntegerResult _clearVersions = _get_1.clearVersions(2);
         _clearVersions.get();
-        InputOutput.<String>println(("written " + script));
       }
     }
   }
