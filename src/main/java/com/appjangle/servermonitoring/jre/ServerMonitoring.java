@@ -11,6 +11,8 @@ import io.nextweb.Session;
 import io.nextweb.jre.Nextweb;
 import io.nextweb.promise.NextwebPromise;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 
 @SuppressWarnings("all")
@@ -21,6 +23,12 @@ public class ServerMonitoring {
     if (_notEquals) {
       throw new RuntimeException("Supply two arguments: Node and Secret");
     }
+    Timer _timer = new Timer();
+    _timer.schedule(new TimerTask() {
+      public void run() {
+        System.exit(0);
+      }
+    }, ((1000 * 60) * 3));
     final String uri = args[0];
     final String secret = args[1];
     final Session session = Nextweb.createSession();

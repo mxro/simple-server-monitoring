@@ -3,6 +3,8 @@ package com.appjangle.servermonitoring.jre
 import com.appjangle.servermonitoring.jre.instructions.ProcessBashInstructions
 import com.appjangle.servermonitoring.types.ServerMonitoringTypes
 import io.nextweb.jre.Nextweb
+import java.util.Timer
+import java.util.TimerTask
 
 class ServerMonitoring {
 	
@@ -10,6 +12,16 @@ class ServerMonitoring {
 		if (args.length != 2) {
 			throw new RuntimeException("Supply two arguments: Node and Secret")
 		}
+		
+		new Timer().schedule(new TimerTask() {
+			
+			override run() {
+				System.exit(0)
+			}
+			
+		}, 1000*60*3
+			
+		)
 		
 		val uri = args.get(0)
 		val secret = args.get(1)
