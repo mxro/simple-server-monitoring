@@ -1,9 +1,6 @@
 package com.appjangle.servermonitoring.jre.instructions;
 
-import java.util.List;
-
 import com.appjangle.servermonitoring.types.ServerMonitoringTypes;
-
 import de.mxro.process.Spawn;
 import io.nextweb.Link;
 import io.nextweb.ListQuery;
@@ -12,6 +9,7 @@ import io.nextweb.NodeList;
 import io.nextweb.Query;
 import io.nextweb.Session;
 import io.nextweb.engine.fn.IntegerResult;
+import java.util.List;
 
 @SuppressWarnings("all")
 public class ProcessBashInstructions {
