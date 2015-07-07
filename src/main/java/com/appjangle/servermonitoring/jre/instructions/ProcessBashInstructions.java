@@ -2,12 +2,12 @@ package com.appjangle.servermonitoring.jre.instructions;
 
 import com.appjangle.servermonitoring.types.ServerMonitoringTypes;
 import de.mxro.process.Spawn;
+import io.nextweb.Client;
 import io.nextweb.Link;
 import io.nextweb.ListQuery;
 import io.nextweb.Node;
 import io.nextweb.NodeList;
 import io.nextweb.Query;
-import io.nextweb.Client;
 import io.nextweb.engine.fn.IntegerResult;
 import java.util.List;
 
