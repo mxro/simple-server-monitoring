@@ -33,7 +33,7 @@ public class ServerMonitoring {
     }, ((1000 * 60) * 3));
     final String uri = args[0];
     final String secret = args[1];
-    final Client session = AppjangleApi.createSession();
+    final Client session = AppjangleApi.createClient();
     final ServerMonitoringTypes t = new ServerMonitoringTypes(session);
     Link _link = session.link(uri, secret);
     final Node root = _link.get();

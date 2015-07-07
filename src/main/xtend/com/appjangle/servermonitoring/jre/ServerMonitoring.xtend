@@ -28,7 +28,7 @@ class ServerMonitoring {
 		val uri = args.get(0)
 		val secret = args.get(1)
 		
-		val session = AppjangleApi.createSession
+		val session = AppjangleApi.createClient
 		
 		val t = new ServerMonitoringTypes(session)
 		
