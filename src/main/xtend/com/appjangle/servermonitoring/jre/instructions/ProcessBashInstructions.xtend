@@ -1,8 +1,8 @@
 package com.appjangle.servermonitoring.jre.instructions
 
+import com.appjangle.api.Node
 import com.appjangle.servermonitoring.types.ServerMonitoringTypes
 import de.mxro.process.Spawn
-import io.nextweb.Node
 
 class ProcessBashInstructions {
 

@@ -9,7 +9,6 @@ import com.appjangle.api.Query;
 import com.appjangle.api.engine.fn.IntegerResult;
 import com.appjangle.servermonitoring.types.ServerMonitoringTypes;
 import de.mxro.process.Spawn;
-
 import java.util.List;
 
 @SuppressWarnings("all")

@@ -1,6 +1,6 @@
 package com.appjangle.servermonitoring.types
 
-import io.nextweb.Client
+import com.appjangle.api.Client
 
 class ServerMonitoringTypes {
 	
