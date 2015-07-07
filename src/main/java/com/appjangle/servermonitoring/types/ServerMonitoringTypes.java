@@ -1,7 +1,7 @@
 package com.appjangle.servermonitoring.types;
 
-import io.nextweb.Client;
-import io.nextweb.Link;
+import com.appjangle.api.Client;
+import com.appjangle.api.Link;
 
 @SuppressWarnings("all")
 public class ServerMonitoringTypes {

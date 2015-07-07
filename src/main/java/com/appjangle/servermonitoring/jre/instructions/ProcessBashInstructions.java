@@ -1,14 +1,15 @@
 package com.appjangle.servermonitoring.jre.instructions;
 
+import com.appjangle.api.Client;
+import com.appjangle.api.Link;
+import com.appjangle.api.ListQuery;
+import com.appjangle.api.Node;
+import com.appjangle.api.NodeList;
+import com.appjangle.api.Query;
+import com.appjangle.api.engine.fn.IntegerResult;
 import com.appjangle.servermonitoring.types.ServerMonitoringTypes;
 import de.mxro.process.Spawn;
-import io.nextweb.Client;
-import io.nextweb.Link;
-import io.nextweb.ListQuery;
-import io.nextweb.Node;
-import io.nextweb.NodeList;
-import io.nextweb.Query;
-import io.nextweb.engine.fn.IntegerResult;
+
 import java.util.List;
 
 @SuppressWarnings("all")

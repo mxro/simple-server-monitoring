@@ -1,14 +1,15 @@
 package com.appjangle.servermonitoring.jre;
 
+import com.appjangle.api.Client;
+import com.appjangle.api.Link;
+import com.appjangle.api.ListQuery;
+import com.appjangle.api.Node;
+import com.appjangle.api.NodeList;
+import com.appjangle.api.jre.Nextweb;
 import com.appjangle.servermonitoring.jre.instructions.ProcessBashInstructions;
 import com.appjangle.servermonitoring.types.ServerMonitoringTypes;
 import delight.functional.Success;
-import io.nextweb.Client;
-import io.nextweb.Link;
-import io.nextweb.ListQuery;
-import io.nextweb.Node;
-import io.nextweb.NodeList;
-import io.nextweb.jre.Nextweb;
+
 import io.nextweb.promise.NextwebPromise;
 import java.util.List;
 import java.util.Timer;
