@@ -1,10 +1,10 @@
 package com.appjangle.servermonitoring.jre
 
-import com.appjangle.api.jre.Nextweb
 import com.appjangle.servermonitoring.jre.instructions.ProcessBashInstructions
 import com.appjangle.servermonitoring.types.ServerMonitoringTypes
 import java.util.Timer
 import java.util.TimerTask
+import com.appjangle.api.jre.AppjangleApi
 
 class ServerMonitoring {
 	
@@ -28,7 +28,7 @@ class ServerMonitoring {
 		val uri = args.get(0)
 		val secret = args.get(1)
 		
-		val session = Nextweb.createSession
+		val session = AppjangleApi.createSession
 		
 		val t = new ServerMonitoringTypes(session)
 		
