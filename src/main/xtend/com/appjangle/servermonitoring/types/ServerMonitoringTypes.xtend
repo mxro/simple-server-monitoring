@@ -1,10 +1,10 @@
 package com.appjangle.servermonitoring.types
 
-import io.nextweb.Session
+import io.nextweb.Client
 
 class ServerMonitoringTypes {
 	
-	Session session;
+	Client session;
 	
 	def instructionGroup() {
 		session.link("https://ajadmin.nxweb.de/admin1/admin1/.n/Monitoring_and_Logging/.n/Types/.n/Instruction_Group")
@@ -22,7 +22,7 @@ class ServerMonitoringTypes {
 		session.link("https://ajadmin.nxweb.de/admin1/admin1/.n/Monitoring_and_Logging/.n/Types/.n/Result");
 	}
 	
-	new(Session session) {
+	new(Client session) {
 		this.session = session;
 	}
 	

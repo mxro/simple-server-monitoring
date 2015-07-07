@@ -7,7 +7,7 @@ import io.nextweb.ListQuery;
 import io.nextweb.Node;
 import io.nextweb.NodeList;
 import io.nextweb.Query;
-import io.nextweb.Session;
+import io.nextweb.Client;
 import io.nextweb.engine.fn.IntegerResult;
 import java.util.List;
 
@@ -16,7 +16,7 @@ public class ProcessBashInstructions {
   private Node node;
   
   public void now() {
-    Session _session = this.node.session();
+    Client _session = this.node.session();
     ServerMonitoringTypes t = new ServerMonitoringTypes(_session);
     Link _bashInstruction = t.bashInstruction();
     ListQuery _selectAll = this.node.selectAll(_bashInstruction);

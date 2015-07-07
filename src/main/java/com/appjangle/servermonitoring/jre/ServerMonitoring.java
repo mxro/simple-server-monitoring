@@ -7,7 +7,7 @@ import io.nextweb.Link;
 import io.nextweb.ListQuery;
 import io.nextweb.Node;
 import io.nextweb.NodeList;
-import io.nextweb.Session;
+import io.nextweb.Client;
 import io.nextweb.jre.Nextweb;
 import io.nextweb.promise.NextwebPromise;
 import java.util.List;
@@ -33,7 +33,7 @@ public class ServerMonitoring {
     }, ((1000 * 60) * 3));
     final String uri = args[0];
     final String secret = args[1];
-    final Session session = Nextweb.createSession();
+    final Client session = Nextweb.createSession();
     final ServerMonitoringTypes t = new ServerMonitoringTypes(session);
     Link _link = session.link(uri, secret);
     final Node root = _link.get();

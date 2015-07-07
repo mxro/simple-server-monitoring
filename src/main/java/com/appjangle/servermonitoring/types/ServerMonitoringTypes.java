@@ -1,11 +1,11 @@
 package com.appjangle.servermonitoring.types;
 
 import io.nextweb.Link;
-import io.nextweb.Session;
+import io.nextweb.Client;
 
 @SuppressWarnings("all")
 public class ServerMonitoringTypes {
-  private Session session;
+  private Client session;
   
   public Link instructionGroup() {
     return this.session.link("https://ajadmin.nxweb.de/admin1/admin1/.n/Monitoring_and_Logging/.n/Types/.n/Instruction_Group");
@@ -23,7 +23,7 @@ public class ServerMonitoringTypes {
     return this.session.link("https://ajadmin.nxweb.de/admin1/admin1/.n/Monitoring_and_Logging/.n/Types/.n/Result");
   }
   
-  public ServerMonitoringTypes(final Session session) {
+  public ServerMonitoringTypes(final Client session) {
     this.session = session;
   }
 }
