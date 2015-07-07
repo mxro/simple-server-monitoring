@@ -1,8 +1,8 @@
 package com.appjangle.servermonitoring.jre
 
+import com.appjangle.api.jre.Nextweb
 import com.appjangle.servermonitoring.jre.instructions.ProcessBashInstructions
 import com.appjangle.servermonitoring.types.ServerMonitoringTypes
-import io.nextweb.jre.Nextweb
 import java.util.Timer
 import java.util.TimerTask
 
