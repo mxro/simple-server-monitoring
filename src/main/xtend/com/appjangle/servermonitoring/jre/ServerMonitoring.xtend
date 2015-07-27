@@ -4,8 +4,7 @@ import com.appjangle.servermonitoring.jre.instructions.ProcessBashInstructions
 import com.appjangle.servermonitoring.types.ServerMonitoringTypes
 import java.util.Timer
 import java.util.TimerTask
-import com.appjangle.api.jre.ClientsPortable
-
+import com.appjangle.api.jre.ClientsGeneralJre
 
 class ServerMonitoring {
 	
@@ -29,7 +28,7 @@ class ServerMonitoring {
 		val uri = args.get(0)
 		val secret = args.get(1)
 		
-		val session = ClientsPortable.createClient
+		val session = ClientsGeneralJre.createClient
 		
 		val t = new ServerMonitoringTypes(session)
 		

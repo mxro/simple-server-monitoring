@@ -5,7 +5,7 @@ import com.appjangle.api.Link;
 import com.appjangle.api.ListQuery;
 import com.appjangle.api.Node;
 import com.appjangle.api.NodeList;
-import com.appjangle.api.jre.ClientsPortable;
+import com.appjangle.api.jre.ClientsGeneralJre;
 import com.appjangle.servermonitoring.jre.instructions.ProcessBashInstructions;
 import com.appjangle.servermonitoring.types.ServerMonitoringTypes;
 import delight.functional.Success;
@@ -33,7 +33,7 @@ public class ServerMonitoring {
     }, ((1000 * 60) * 3));
     final String uri = args[0];
     final String secret = args[1];
-    final Client session = ClientsPortable.createClient();
+    final Client session = ClientsGeneralJre.createClient();
     final ServerMonitoringTypes t = new ServerMonitoringTypes(session);
     Link _link = session.link(uri, secret);
     final Node root = _link.get();
