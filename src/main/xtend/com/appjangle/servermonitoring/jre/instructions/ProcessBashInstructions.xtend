@@ -9,7 +9,7 @@ class ProcessBashInstructions {
 	Node node;
 
 	def now() {
-		var t = new ServerMonitoringTypes(node.session())
+		var t = new ServerMonitoringTypes(node.client())
 		val bashInstructions = node.selectAll(t.bashInstruction).get();
 
 

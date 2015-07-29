@@ -16,8 +16,8 @@ public class ProcessBashInstructions {
   private Node node;
   
   public void now() {
-    Client _session = this.node.session();
-    ServerMonitoringTypes t = new ServerMonitoringTypes(_session);
+    Client _client = this.node.client();
+    ServerMonitoringTypes t = new ServerMonitoringTypes(_client);
     Link _bashInstruction = t.bashInstruction();
     ListQuery _selectAll = this.node.selectAll(_bashInstruction);
     final NodeList bashInstructions = _selectAll.get();
