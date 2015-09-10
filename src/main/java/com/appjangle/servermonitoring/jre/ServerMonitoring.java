@@ -9,7 +9,7 @@ import com.appjangle.api.jre.ClientsGeneralJre;
 import com.appjangle.servermonitoring.jre.instructions.ProcessBashInstructions;
 import com.appjangle.servermonitoring.types.ServerMonitoringTypes;
 import delight.functional.Success;
-import io.nextweb.promise.NextwebPromise;
+import io.nextweb.promise.DataPromise;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -53,7 +53,7 @@ public class ServerMonitoring {
         _processBashInstructions.now();
       }
     }
-    NextwebPromise<Success> _close = session.close();
+    DataPromise<Success> _close = session.close();
     _close.get();
     timer.cancel();
   }
