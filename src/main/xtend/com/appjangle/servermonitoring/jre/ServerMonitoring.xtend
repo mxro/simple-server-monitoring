@@ -46,6 +46,7 @@ class ServerMonitoring {
 		}
 		session.close.get
 		
+		
 		timer.cancel
 		
 	}
