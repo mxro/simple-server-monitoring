@@ -1,11 +1,15 @@
 package com.appjangle.servermonitoring.jre;
 
 import com.appjangle.api.Client;
+import com.appjangle.api.Link;
+import com.appjangle.api.ListQuery;
 import com.appjangle.api.Node;
 import com.appjangle.api.NodeList;
 import com.appjangle.api.jre.ClientsGeneralJre;
 import com.appjangle.servermonitoring.jre.instructions.ProcessBashInstructions;
 import com.appjangle.servermonitoring.types.ServerMonitoringTypes;
+import delight.functional.Success;
+import io.nextweb.promise.DataPromise;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -31,21 +35,26 @@ public class ServerMonitoring {
     final String secret = args[1];
     final Client session = ClientsGeneralJre.createClient();
     final ServerMonitoringTypes t = new ServerMonitoringTypes(session);
-    final Node root = session.link(uri, secret).get();
+    Link _link = session.link(uri, secret);
+    final Node root = _link.get();
     String _uri = root.uri();
     String _plus = ("Loaded instructions: " + _uri);
     InputOutput.<String>println(_plus);
-    final NodeList groups = root.selectAll(t.instructionGroup()).get();
+    Link _instructionGroup = t.instructionGroup();
+    ListQuery _selectAll = root.selectAll(_instructionGroup);
+    final NodeList groups = _selectAll.get();
     List<Node> _nodes = groups.nodes();
     for (final Node group : _nodes) {
       {
         String _uri_1 = group.uri();
         String _plus_1 = ("Processing group: " + _uri_1);
         InputOutput.<String>println(_plus_1);
-        new ProcessBashInstructions(group).now();
+        ProcessBashInstructions _processBashInstructions = new ProcessBashInstructions(group);
+        _processBashInstructions.now();
       }
     }
-    session.close().get();
+    DataPromise<Success> _close = session.close();
+    _close.get();
     timer.cancel();
   }
 }
